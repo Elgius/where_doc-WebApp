@@ -42,7 +42,25 @@ git clone the following repositories into you system:
 <br />
 <br />
 
-and umm...run all them 
+and umm...run all them
+
+
+# Road Map
+
+this is tentative and is subjected to changes as the days go by
+
+## Phase 1
+- Webapp that shows all doctor schedules in Greater Male area
+- Allows Users to pick time periods to see which doctor is available when
+- Allow users to see which Doctors are on leave and till when
+
+## Phase 2
+- additons of more Hospitals, clinics and health centers
+- Viber, Telegram and Whatsapp bots
+
+## Phase 3
+- End to End appointment system for some of the Heath clinics
+
 
 <!-- First, run the development server:
 
