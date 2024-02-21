@@ -18,9 +18,33 @@ We are open source to show that we do not illegally take data from any of the re
 
 In short, YES!!! anyone can contribute to this project but we will not simply accept all pull requests without code reviews
 
-## Getting Started
 
-First, run the development server:
+## What tech stack are we using?
+
+- NextJS
+- Tailwind CSS + ShadCN UI
+- Acernity UI
+- [NestJS](https://github.com/Elgius/where_doc_backend) (This is the backend)
+- [Scrappers](https://github.com/Elgius/where_doc_scrapper) (Code that runs the scrapper)
+- Clerk Auth (temporarily using clerk Auth for auth needs)
+- Supabase
+- Docker (coming soon)
+
+
+## Getting Started with this repository
+
+git clone the following repositories into you system:
+
+- whereDoc_website (this repository)
+- [where_doc_server](https://github.com/Elgius/where_doc_backend) (click this text to go to repository)
+- [where_doc_scrapper](https://github.com/Elgius/where_doc_scrapper) (click this text to go to repository)
+
+<br />
+<br />
+
+and umm...run all them 
+
+<!-- First, run the development server:
 
 ```bash
 npm run dev
@@ -32,4 +56,4 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. -->
