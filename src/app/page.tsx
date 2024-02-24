@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { Button } from "@/components/ui/button";
-// import Link from "next/link";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -27,13 +27,23 @@ export default function Home() {
         </p>
 
         <div className="mt-10 flex items-center flex-col justify-center gap-7">
-          <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
-            Search Doctors
-          </Button>
+          <Link href="/doctors">
+            <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
+              Search Doctors
+            </Button>
+          </Link>
 
-          <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
-            Contact Us
-          </Button>
+          <Link href="/rdoc">
+            <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
+              Recommend Doc
+            </Button>
+          </Link>
+
+          <Link href="/Contact">
+            <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
+              Contact Us
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
