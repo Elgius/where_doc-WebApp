@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 export default function Page() {
   return (
     // Bug: animations not smooth in dev mode, check prod server to verify if issue persists
+    // Bug 2: instruction set in this is weird: https://ui.aceternity.com/components/background-beams, check and rectify errors
     <div className="h-screen bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
       <div className="max-w-2xl mx-auto p-4">
         <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
