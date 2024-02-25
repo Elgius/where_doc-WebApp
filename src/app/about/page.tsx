@@ -5,6 +5,10 @@ import Link from "next/link";
 
 import { SparklesCore } from "@/components/ui/sparkles";
 
+
+// bug: Buttons dont work after the sparkles where introduced. Not sure why
+// Github issue: https://github.com/Elgius/where_doc-WebApp/issues/3
+
 export default function About() {
   return (
     <div className="h-screen bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
