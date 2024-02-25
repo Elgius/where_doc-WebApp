@@ -38,7 +38,7 @@ export default function About() {
           </Link>
 
           <Link href="/">
-            <Button>Donate cuz we broke too 😊</Button>
+            <Button> Donate cuz we broke too 😊</Button>
           </Link>
         </div>
       </div>
