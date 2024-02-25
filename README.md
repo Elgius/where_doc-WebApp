@@ -53,6 +53,7 @@ this is tentative and is subjected to changes as the days go by
 - Webapp that shows all doctor schedules in Greater Male area
 - Allows Users to pick time periods to see which doctor is available when
 - Allow users to see which Doctors are on leave and till when
+- Verified Clinics and health centers (these facilities give us data directly than us going and scrapping data from them)
 
 ## Phase 2
 - additons of more Hospitals, clinics and health centers
