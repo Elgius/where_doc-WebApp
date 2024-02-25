@@ -22,11 +22,11 @@ export default function Home() {
           Disclaimer: This website uses existing data that is available for the
           public to see via the respective authorities websites or facebook
           pages. In a situation where the respective party is uncomfortable or
-          want us to drop the information, please contact us from the below
-          links
+          want us to drop the information, please get in touch by pressing the
+          contact us button below
         </p>
 
-        <div className="mt-10 flex items-center flex-col justify-center gap-7">
+        <div className="mt-12 flex items-center flex-row-2 justify-center gap-7">
           <Link href="/doctors">
             <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
               Search Doctors
@@ -42,6 +42,12 @@ export default function Home() {
           <Link href="/contact">
             <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
               Contact Us
+            </Button>
+          </Link>
+
+          <Link href="/about">
+            <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
+              About us
             </Button>
           </Link>
         </div>

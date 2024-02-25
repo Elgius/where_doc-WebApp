@@ -5,7 +5,6 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-
 export default function Page() {
   return (
     // Bug: animations not smooth in dev mode, check prod server to verify if issue persists
@@ -20,8 +19,9 @@ export default function Page() {
         <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
           Since we are using publically available data, we are aware some might
           not appreciate this. Therefore we are willing to drop any data that
-          any party would not want up. Please drop your email below and we will
-          be willing to sort something out. (this is in development, nothing works in this page lol)
+          any party would not want up. Please drop your email below and customer
+          support will get back to you as soon as possible (this is in
+          development, nothing works in this page lol)
         </p>
         <input
           type="text"
@@ -30,19 +30,12 @@ export default function Page() {
         />
 
         <div className="mt-10 flex items-center justify-center flex-col gap-5">
-          <Button>
-            Submit
-          </Button>
+          <Button>Submit</Button>
 
           <Link href="/">
-          <Button>
-            Home
-          </Button>
+            <Button>Home</Button>
           </Link>
         </div>
-
-
-
       </div>
       {/* <BackgroundBeams /> */}
     </div>
