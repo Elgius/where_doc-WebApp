@@ -1,3 +1,6 @@
+// commented out for forced prod revival
+// contact Elgius if you have no idea what that means lol
+
 // "use client";
 // import React from "react";
 // import { motion } from "framer-motion";
