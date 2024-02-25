@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
+  // Home
   return (
     <div className="h-screen w-screen flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
       <Spotlight
@@ -26,8 +27,10 @@ export default function Home() {
           contact us button below
         </p>
 
+
         <div className="mt-12 flex items-center flex-row-2 justify-center gap-7">
           <Link href="/doctors">
+
             <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
               Search Doctors
             </Button>
