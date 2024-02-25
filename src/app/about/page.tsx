@@ -1,10 +1,24 @@
+'use client'
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+import { SparklesCore } from "@/components/ui/sparkles";
+
 export default function About() {
   return (
     <div className="h-screen bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
+      <div className="w-full absolute inset-0 h-screen">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
+      </div>
       <div className="max-w-2xl mx-auto p-4">
         <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
           About Us!
