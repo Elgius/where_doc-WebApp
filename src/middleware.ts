@@ -1,4 +1,8 @@
 import { authMiddleware } from "@clerk/nextjs";
+
+// when you are working on a page, just add the page on the ignoredRoutes array to avoid always signing up
+// eg:  ignoredRoutes: ['/contact']
+// i wouuld declare the above array if i am working on the contact us page
  
 export default authMiddleware({
   // Routes that can be accessed while signed out

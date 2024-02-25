@@ -39,7 +39,7 @@ export default function Home() {
             </Button>
           </Link>
 
-          <Link href="/Contact">
+          <Link href="/contact">
             <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
               Contact Us
             </Button>
