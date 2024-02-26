@@ -49,15 +49,15 @@ export default function About() {
           we created WhereDoc as a way for people to find Doctors of the same
           field and see thir duty times.
         </p>
-        <div className="mt-10 flex items-center justify-center flex-row gap-5">
-          <Link href="/">
-            <Button>Home</Button>
-          </Link>
+      </div>
+      <div className="mt-3 flex items-center justify-center flex-row gap-5 z-10">
+        <Link href="/">
+          <Button>Home</Button>
+        </Link>
 
-          <Link href="/">
-            <Button> Donate cuz we broke too 😊</Button>
-          </Link>
-        </div>
+        <Link href="/">
+          <Button> Donate cuz we broke too 😊</Button>
+        </Link>
       </div>
     </div>
   );
