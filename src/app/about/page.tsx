@@ -1,10 +1,9 @@
-'use client'
+"use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 import { SparklesCore } from "@/components/ui/sparkles";
-
 
 // bug: Buttons dont work after the sparkles where introduced. Not sure why
 // Github issue: https://github.com/Elgius/where_doc-WebApp/issues/3
