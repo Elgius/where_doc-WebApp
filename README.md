@@ -33,17 +33,11 @@ In short, YES!!! anyone can contribute to this project but we will not simply ac
 
 ## Getting Started with this repository
 
-git clone the following repositories into you system:
+git clone the following repository into you system:
 
 - whereDoc_website (this repository)
-- [where_doc_server](https://github.com/Elgius/where_doc_backend) (click this text to go to repository)
-- [where_doc_scrapper](https://github.com/Elgius/where_doc_scrapper) (click this text to go to repository)
 
-<br />
-<br />
-
-and umm...run all them
-
+and run the project normally with NPM. The Backend and Scrappers are not connected to this project as of now 
 
 # Road Map
 
@@ -64,17 +58,6 @@ this is tentative and is subjected to changes as the days go by
 
 
 
+# Amazing people who have contributed to our project
 
-<!-- First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. -->
+- [Erick559](https://github.com/Erick559)
