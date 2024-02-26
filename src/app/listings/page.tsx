@@ -9,12 +9,15 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { avalableDoctors } from "@/lib/data";
 
 // import Link from "next/link";
 // import { Button } from "@/components/ui/button";
 
 export default function Lists() {
   // use state hooks + something
+
+  console.log(avalableDoctors)
   return (
     <div className="h-screen bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
       <div>
@@ -76,3 +79,11 @@ export default function Lists() {
     </div>
   );
 }
+
+
+// name: String;
+// field: String;
+// clinic: String;
+// address?: String;
+// shift: String;
+// room: String;

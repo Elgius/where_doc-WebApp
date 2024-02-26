@@ -29,4 +29,13 @@ export const avalableDoctors : Doctors = [
         shift: "1900-2200",
         room: "-",
     },
+
+    {
+        name: "Bend Over",
+        field: "SuS",
+        clinic: "you dont need to know",
+        address: "sus place",
+        shift: "1900-2200",
+        room: "-",
+    },
 ]

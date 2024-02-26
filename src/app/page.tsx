@@ -28,7 +28,7 @@ export default function Home() {
         </p>
 
         <div className="mt-12 flex items-center flex-row-2 justify-center gap-7">
-          <Link href="/listing">
+          <Link href="/listings">
             <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
               Search Doctors
             </Button>
