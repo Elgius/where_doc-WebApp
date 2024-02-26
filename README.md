@@ -58,6 +58,15 @@ this is tentative and is subjected to changes as the days go by
 
 
 
+
+
+
+# Medical Facilties that have agreed to share data with us
+
+- non yet...
+
+
+
 # Amazing people who have contributed to our project
 
 - [Erick559](https://github.com/Erick559)
