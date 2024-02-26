@@ -19,12 +19,12 @@ export default function About() {
           minSize={0.6}
           maxSize={1.4}
           particleDensity={100}
-          className="w-full h-full"
+          className="w-full h-full pointer-events-none"
           particleColor="#FFFFFF"
         />
       </div>
-      <div className="max-w-2xl mx-auto p-4">
-        <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
+      <div className="max-w-2xl z-10 mx-auto p-4">
+        <h1 className="relative text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
           About Us!
         </h1>
         <p></p>
@@ -51,13 +51,13 @@ export default function About() {
           field and see thir duty times.
         </p>
         <div className="mt-10 flex items-center justify-center flex-row gap-5">
-          <Link href="/">
-            <Button>Home</Button>
-          </Link>
+          <Button>
+            <Link href="/">Home</Link>
+          </Button>
 
-          <Link href="/">
-            <Button> Donate cuz we broke too 😊</Button>
-          </Link>
+          <Button>
+            <Link href="/">Donate cuz we broke too 😊</Link>
+          </Button>
         </div>
       </div>
     </div>
