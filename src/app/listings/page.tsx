@@ -14,7 +14,7 @@ import {
 // import { Button } from "@/components/ui/button";
 
 export default function Lists() {
-    // use state hooks + something
+  // use state hooks + something
   return (
     <div className="h-screen bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
       <div>
@@ -34,9 +34,7 @@ export default function Lists() {
               <TableCaption>Updated list for today</TableCaption>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[100px] text-white">
-                    ID
-                  </TableHead>
+                  <TableHead className="w-[100px] text-white">ID</TableHead>
                   <TableHead className="text-white">Doctor</TableHead>
                   <TableHead className="text-white">Specialisation</TableHead>
                   <TableHead className="text-right text-white">
@@ -65,7 +63,9 @@ export default function Lists() {
                   <TableCell className="font-medium">#3</TableCell>
                   <TableCell>Elgius</TableCell>
                   <TableCell>Hustling</TableCell>
-                  <TableCell className="text-right">Gonna get fired soon lol</TableCell>
+                  <TableCell className="text-right">
+                    Gonna get fired soon lol
+                  </TableCell>
                   <TableCell className="text-right">[Link]</TableCell>
                 </TableRow>
               </TableBody>
