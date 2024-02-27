@@ -1,13 +1,8 @@
 "use client";
 import React from "react";
 import Listing from "@/components/listing/Table";
-import { avalableDoctors } from "@/lib/data";
-
-// import Link from "next/link";
-// import { Button } from "@/components/ui/button";
 
 export default function Lists() {
-  console.log(avalableDoctors);
   return (
     <div className="h-screen w-screen flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
       <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
@@ -28,10 +23,3 @@ export default function Lists() {
     </div>
   );
 }
-
-// name: String;
-// field: String;
-// clinic: String;
-// address?: String;
-// shift: String;
-// room: String;
