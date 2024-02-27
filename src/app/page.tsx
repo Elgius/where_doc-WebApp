@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
           WhereDoc
           <br />
-          <p className="text-xl md:text-md font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50  my-10">
+          <p className="text-xl md:text-md sm:text-sm font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50  my-10">
             Your guide to finding a doctor
           </p>
         </h1>
@@ -27,7 +27,7 @@ export default function Home() {
           contact us button below
         </p>
 
-        <div className="mt-12 flex items-center flex-row-2 justify-center gap-7">
+        <div className="mt-12 flex items-center flex-col lg:flex-row md:flex-row justify-center gap-7 ">
           <Link href="/listings">
             <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
               Search Doctors
