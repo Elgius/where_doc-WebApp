@@ -12,7 +12,7 @@ export default function Lists() {
         <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
           Disclaimer: This is very tentative. Only verified facilities are more
           likely to not have drastic changes in schedule, meanwhile other
-          facilities may make alst minute schedule changes and it may not get
+          facilities may make last minute schedule changes and it may not get
           reflected on the site
         </p>
 
