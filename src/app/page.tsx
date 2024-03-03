@@ -34,7 +34,7 @@ export default function Home() {
             </Button>
           </Link>
 
-          <Link href="/">
+          <Link href="/rdoc">
             <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
               Recommend Doc
             </Button>
