@@ -1,12 +1,15 @@
 "use client";
 import React from "react";
 import Listing from "@/components/listing/Table";
+import { DataTable } from "./data-table";
+import { columns } from "./columns";
+import { availableDoctors } from "@/lib/data";
 
 export default function Lists() {
   return (
-    <div className="w-screen flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-y-auto overflow-x-hidden">
-      <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
-        <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+    <div className="h-screen w-screen flex justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-y-auto overflow-x-hidden">
+      <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-12 md:pt-20">
+        <h1 className="text-4xl md:text-6xl leading-16 font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
           Listing
         </h1>
         <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
@@ -17,7 +20,7 @@ export default function Lists() {
         </p>
 
         <div className="mt-12 flex items-center flex-col lg:flex-row md:flex-row justify-center gap-7 ">
-          <Listing />
+          <DataTable columns={columns} data={availableDoctors} />
         </div>
       </div>
     </div>
