@@ -11,7 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { avalableDoctors } from "@/lib/data";
+import { availableDoctors } from "@/lib/data";
 
 const Listing = () => {
   return (
@@ -21,14 +21,14 @@ const Listing = () => {
         <TableHeader>
           <TableRow>
             <TableHead className="text-white">Doctor</TableHead>
-            <TableHead className="text-white">Specialisation</TableHead>
+            <TableHead className="text-white">Specialization</TableHead>
             <TableHead className="text-right text-white">Facility</TableHead>
             <TableHead className="text-white">Address</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {/* Mapping function will be here */}
-          {avalableDoctors.map((doctor, index) => (
+          {availableDoctors.map((doctor, index) => (
             <TableRow key={index}>
               <TableCell>{doctor.name}</TableCell>
               <TableCell>{doctor.field}</TableCell>
