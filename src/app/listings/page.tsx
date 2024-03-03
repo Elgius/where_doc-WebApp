@@ -8,7 +8,7 @@ import { availableDoctors } from "@/lib/data";
 export default function Lists() {
   return (
     <div className="h-screen w-screen flex justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-y-auto overflow-x-hidden">
-      <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-12 md:pt-20">
+      <div className=" p-2 max-w-7xl  mx-auto relative z-10  w-full pt-12 md:pt-20">
         <h1 className="text-4xl md:text-6xl leading-16 font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
           Listing
         </h1>
