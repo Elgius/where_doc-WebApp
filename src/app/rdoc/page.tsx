@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export default function rDoc() {
   return (
     <div className="h-screen w-screen flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
@@ -11,8 +12,10 @@ export default function rDoc() {
           Disclaimer: Take the data shown below as tentative. It might be inaccurate and we are constantly striving to improve it
         </p>
 
-        <div className="mt-12 flex items-center flex-col lg:flex-row md:flex-row justify-center gap-7 ">
-
+        <div className="mt-12 flex items-center justify-center">
+          <div>
+              
+          </div>
       </div>
     </div>
     </div>
