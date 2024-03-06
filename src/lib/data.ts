@@ -1,6 +1,6 @@
 // this file contains a sample on how we expect the data flow to be
 
-type Doctor = {
+export type Doctor = {
   name: String;
   field: String;
   clinic: String;
