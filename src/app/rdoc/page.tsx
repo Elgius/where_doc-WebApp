@@ -1,4 +1,7 @@
+"use client"
+
 import React from "react";
+import Form from "@/components/recDoc/Form";
 
 
 export default function rDoc() {
@@ -14,7 +17,7 @@ export default function rDoc() {
 
         <div className="mt-12 flex items-center justify-center">
           <div>
-              
+              <Form />
           </div>
       </div>
     </div>
