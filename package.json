@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node config/checkEnv.js && next dev",
+    "dev": "node config/checkEnv.ts && next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "node config/checkEnv.ts && next start",
     "lint": "next lint"
   },
   "dependencies": {
