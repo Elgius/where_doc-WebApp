@@ -5,7 +5,7 @@ import { DataTable } from "./data-table";
 import { columns } from "./columns";
 import { availableDoctors } from "@/lib/data";
 // DB client
-import { listing } from "@/lib/supabaseData";
+// import { listing } from "@/lib/supabaseData";R
 
 // the hooks to be cool
 import { useEffect, useState } from "react";
