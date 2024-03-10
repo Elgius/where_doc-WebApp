@@ -4,15 +4,16 @@ import React from "react";
 import { DataTable } from "./data-table";
 import { columns } from "./columns";
 import { availableDoctors } from "@/lib/data";
-// DB client
-import { listing } from "@/lib/supabaseData";
-
-// the hooks to be cool
-import { useEffect, useState } from "react";
 
 export default function Lists() {
-  console.log(listing);
+  const fetchData = async () => {
+    const response = await fetch("./api/data");
+    const data = await response.json();
 
+    let doc = data;
+
+    console.log(doc);
+  };
   return (
     <div className="h-screen w-screen flex justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-y-auto overflow-x-hidden">
       <div className=" p-2 max-w-7xl  mx-auto relative z-10  w-full pt-12 md:pt-20">

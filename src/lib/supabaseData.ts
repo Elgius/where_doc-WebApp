@@ -1,14 +1,15 @@
-import { supabaseClient } from "@/db/client";
+// reference code
 
-let listing 
+// import { supabaseClient } from "@/db/client";
 
-async function sData() {
-    const { data: results, error } = await supabaseClient.from("ADK").select("*");
+// export async function getStaticProps() {
+//   const { data: results, error } = await supabaseClient.from("ADK").select("*");
 
-    if (error) console.log("Error", error);
-    else {
-        listing = results
-    };
-}
+//   if (error) {
+//     console.error("Error fetching data", error);
+//     return { props: { error: true } };
+//   }
+//   return { props: { data: results } };
+// }
 
-export {listing}
+// pages/api/data.js
