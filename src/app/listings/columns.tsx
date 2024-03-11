@@ -16,18 +16,26 @@ type Doctor = {
 export const columns: ColumnDef<Doctor>[] = [
   {
     accessorKey: "name",
+    cell: (info) => info.getValue(),
     header: "Name",
+    filterFn: "fuzzy",
   },
   {
     accessorKey: "field",
+    cell: (info) => info.getValue(),
     header: "Field",
+    filterFn: "fuzzy",
   },
   {
     accessorKey: "clinic",
+    cell: (info) => info.getValue(),
     header: "Clinic",
+    filterFn: "fuzzy",
   },
   {
     accessorKey: "address",
+    cell: (info) => info.getValue(),
     header: "Address",
+    filterFn: "fuzzy",
   },
 ];
