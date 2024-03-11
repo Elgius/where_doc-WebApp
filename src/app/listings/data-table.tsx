@@ -11,6 +11,7 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   useReactTable,
+  FilterFn,
 } from "@tanstack/react-table";
 
 import {
@@ -23,11 +24,38 @@ import {
 } from "@/components/ui/table";
 import { DataTablePagination } from "@/components/listing/data-table-pagination";
 import { useState } from "react";
+import {
+  RankingInfo,
+  rankItem,
+  compareItems,
+} from "@tanstack/match-sorter-utils";
+
+declare module "@tanstack/table-core" {
+  interface FilterFns {
+    fuzzy: FilterFn<unknown>;
+  }
+  interface FilterMeta {
+    itemRank: RankingInfo;
+  }
+}
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
+
+const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
+  // Rank the item
+  const itemRank = rankItem(row.getValue(columnId), value);
+
+  // Store the itemRank info
+  addMeta({
+    itemRank,
+  });
+
+  // Return if the item should be filtered in/out
+  return itemRank.passed;
+};
 
 export function DataTable<TData, TValue>({
   columns,
@@ -37,14 +65,17 @@ export function DataTable<TData, TValue>({
   const tableOptions: TableOptions<TData> = {
     data,
     columns,
-    getCoreRowModel: getCoreRowModel(), // Adjust this based on your implementation
-    getPaginationRowModel: getPaginationRowModel(), // Adjust this based on your implementation
-    getFilteredRowModel: getFilteredRowModel(),
     state: {
       globalFilter: filtering,
     },
-    // !ALERT: type ResolvedFilterFns is commented out on Filters.d.ts(lines 216-220) in node module/@tanstack so that we don't need any filterfns here
+    filterFns: {
+      fuzzy: fuzzyFilter,
+    },
+    getCoreRowModel: getCoreRowModel(), // Adjust this based on your implementation
+    getPaginationRowModel: getPaginationRowModel(), // Adjust this based on your implementation
+    getFilteredRowModel: getFilteredRowModel(),
     onGlobalFilterChange: setFiltering,
+    globalFilterFn: fuzzyFilter,
   };
 
   const table = useReactTable(tableOptions);
