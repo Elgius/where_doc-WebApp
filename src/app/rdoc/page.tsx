@@ -1,4 +1,8 @@
+"use client"
+
 import React from "react";
+import Form from "@/components/recDoc/Form";
+
 
 export default function rDoc() {
   return (
@@ -11,8 +15,10 @@ export default function rDoc() {
           Disclaimer: Take the data shown below as tentative. It might be inaccurate and we are constantly striving to improve it
         </p>
 
-        <div className="mt-12 flex items-center flex-col lg:flex-row md:flex-row justify-center gap-7 ">
-
+        <div className="mt-12 flex items-center justify-center">
+          <div>
+              <Form />
+          </div>
       </div>
     </div>
     </div>
