@@ -51,6 +51,12 @@ export default function Home() {
               About us
             </Button>
           </Link>
+
+          <Link href="/logIn">
+            <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
+              Login
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
