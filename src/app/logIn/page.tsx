@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+// import { SparklesCore } from "@/components/ui/sparkles";
 
 import type { Database } from "@/lib/database.types";
 
@@ -45,11 +46,22 @@ export default function Login() {
     <>
       {/* Convert this form to shadcn Form before we roll out for Beta testing */}
       <div className="h-screen w-screen flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+        {/* <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        /> */}
         <div className="bg-white rounded-lg flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
           {/* convert this into a card component to make this a lot easier down the line */}
           <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
             <h1 className="text-center text-2xl font-bold leading-tight text-black">
-              Enter your email and password that we authorized!
+              Welcome to the Beta Test!
+              <br />
+              (if your login does not work, call us!)
             </h1>
             <div className="flex flex-col gap-2 my-10">
               <label className="text-black font-bold">Email</label>
