@@ -23,8 +23,8 @@ In short, YES!!! anyone can contribute to this project but we will not simply ac
 - NextJS
 - Tailwind CSS + ShadCN UI
 - Acernity UI
-- [NestJS](https://github.com/Elgius/where_doc_backend) (This is the backend)
-- [Scrappers](https://github.com/Elgius/where_doc_scrapper) (Code that runs the scrapper)
+- [NestJS](https://github.com/Elgius/where_doc_backend) (This is the backend, temporarily down)
+- [Scrappers](https://github.com/Elgius/where_doc_scrapper) (Code that runs the scrapper, temporarily down)
 - Clerk Auth (temporarily using clerk Auth for auth needs)
 - Supabase
 - Docker (coming soon)
