@@ -24,7 +24,7 @@ export default function Home() {
           public to see via the respective authorities websites or facebook
           pages. In a situation where the respective party is uncomfortable or
           want us to drop the information, please get in touch by pressing the
-          contact us button below
+          contact us button below to get in touch with us
         </p>
 
         <div className="mt-12 flex items-center flex-col lg:flex-row md:flex-row justify-center gap-7 ">
@@ -49,6 +49,12 @@ export default function Home() {
           <Link href="/about">
             <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
               About us
+            </Button>
+          </Link>
+
+          <Link href="/logIn">
+            <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
+              Login
             </Button>
           </Link>
         </div>
