@@ -1,10 +1,27 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { supabaseClient } from "@/db/client";
 
 export default function Home() {
   // Home page
+
+  // some hooks to check if the person is logged in or not. this wont enter prod for now
+
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    if (typeof supabaseClient !== "undefined") {
+      setSession(supabaseClient.auth.getUser());
+    } else {
+      console.log("error detected in the client at the main page");
+    }
+  }, []);
+
   return (
     <div className="h-screen w-screen flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
       <Spotlight
@@ -56,6 +73,16 @@ export default function Home() {
             <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
               Login
             </Button>
+          </Link>
+
+          <Link legacyBehavior href="/logIn">
+            {session ? (
+              <Button onClick={() => supabaseClient.auth.signOut()}>
+                Logout
+              </Button>
+            ) : (
+              <a href="/login">Login</a>
+            )}
           </Link>
         </div>
       </div>
