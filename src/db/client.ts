@@ -13,7 +13,7 @@ if (
   supabaseClient = createClient(url, key);
 } else {
   console.error(
-    `The enviroment variables are not loading...wtaf... ${supabaseClient}`
+    `The environment variables are not loading...wtf... ${supabaseClient}`
   );
   console.log("Supabase client status:  ", supabaseClient);
 }

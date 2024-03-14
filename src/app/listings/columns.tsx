@@ -6,10 +6,10 @@ import { ColumnDef } from "@tanstack/react-table";
 // You can use a Zod schema here if you want.
 type Doctor = {
   name: String;
-  field: String;
-  clinic: String;
+  department: String;
+  clinic?: String;
   address?: String;
-  //   shift: String;
+  duty: String;
   //   room: String;
 };
 
@@ -21,9 +21,9 @@ export const columns: ColumnDef<Doctor>[] = [
     filterFn: "fuzzy",
   },
   {
-    accessorKey: "field",
+    accessorKey: "department",
     cell: (info) => info.getValue(),
-    header: "Field",
+    header: "Department",
     filterFn: "fuzzy",
   },
   {
@@ -36,6 +36,12 @@ export const columns: ColumnDef<Doctor>[] = [
     accessorKey: "address",
     cell: (info) => info.getValue(),
     header: "Address",
+    filterFn: "fuzzy",
+  },
+  {
+    accessorKey: "duty",
+    cell: (info) => info.getValue(),
+    header: "Timings",
     filterFn: "fuzzy",
   },
 ];

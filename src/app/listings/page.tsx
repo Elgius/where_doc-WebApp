@@ -1,19 +1,34 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import Listing from "@/components/listing/Table";
 import { DataTable } from "./data-table";
 import { columns } from "./columns";
 import { availableDoctors } from "@/lib/data";
+import { DoctorData } from "@/types";
+import { getDoctorData } from "@/lib/actions/doctor.action";
 
 export default function Lists() {
-  const fetchData = async () => {
-    const response = await fetch("./api/data");
-    const data = await response.json();
+  const [isLoading, setIsLoading] = useState(true);
+  // TODO: change the data type later
+  const [doctorData, setDoctorData] = useState<any>([]);
+  const [error, setError] = useState<any>(null);
 
-    let doc = data;
+  useEffect(() => {
+    async function fetchDoctors() {
+      try {
+        const data = await getDoctorData();
+        console.log(data);
 
-    console.log(doc);
-  };
+        setDoctorData(data); // Assuming getDoctorData returns data in the format { data: DoctorData[] }
+      } catch (error) {
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchDoctors();
+  }, []);
   return (
     <div className="h-screen w-screen flex justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-y-auto overflow-x-hidden">
       <div className=" p-2 max-w-7xl  mx-auto relative z-10  w-full pt-12 md:pt-20">
@@ -28,7 +43,7 @@ export default function Lists() {
         </p>
 
         <div className="mt-12 flex items-center flex-col lg:flex-row md:flex-row justify-center gap-7 ">
-          <DataTable columns={columns} data={availableDoctors} />
+          <DataTable columns={columns} data={doctorData} />
         </div>
       </div>
     </div>
