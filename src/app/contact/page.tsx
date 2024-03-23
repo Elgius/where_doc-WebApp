@@ -4,12 +4,31 @@ import React from "react";
 // import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { supabaseClient } from "@/db/client";
+import { useState } from "react";
 
 export default function Page() {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Button triggered");
+    if (typeof supabaseClient !== "undefined") {
+      const { data, error } = await supabaseClient
+        .from("contacts")
+        .insert([{ email, timestamp: new Date().toISOString() }]);
+
+      if (error) {
+        console.error("Error inserting Data: ", error);
+      } else {
+        console.log("Data inserted: ", data);
+      }
+    } else {
+      console.error("Supabase client error at contact us route");
+    }
+  };
+
   return (
-    // Bug: animations not smooth in dev mode, check prod server to verify if issue persists
-    // Bug 2: instruction set in this is weird: https://ui.aceternity.com/components/background-beams, check and rectify errors
-    // animation commented out till further notice
     <div className="h-screen bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
       <div className="max-w-2xl mx-auto p-4">
         <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
@@ -23,24 +42,34 @@ export default function Page() {
           support will get back to you as soon as possible (this is in
           development, nothing works in this page lol)
         </p>
-        <input
-          type="text"
-          placeholder="whereDocSupport@gmail.com"
-          className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500  w-full relative z-10 mt-4  bg-neutral-950 placeholder:text-neutral-700"
-        />
+        <div>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="whereDocSupport@gmail.com"
+              className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500  w-full relative z-10 mt-4  bg-neutral-950 placeholder:text-neutral-700 text-white"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-        <div className="mt-10 flex items-center justify-center flex-col gap-5">
-          <Button>Submit</Button>
+            <div className="mt-10 flex items-center justify-center flex-col gap-5">
+              <Button type="submit">Submit</Button>
 
-          <Link href="/">
-            <Button>Home</Button>
-          </Link>
+              <Link href="/">
+                <Button>Home</Button>
+              </Link>
+            </div>
+          </form>
         </div>
       </div>
       {/* <BackgroundBeams /> */}
     </div>
   );
 }
+
+// Bug: animations not smooth in dev mode, check prod server to verify if issue persists
+// Bug 2: instruction set in this is weird: https://ui.aceternity.com/components/background-beams, check and rectify errors
+// animation commented out till further notice
 
 // commented out for forced prod revival
 // contact Elgius if you have no idea what that means lol

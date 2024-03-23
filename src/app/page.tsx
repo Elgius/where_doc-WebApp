@@ -53,7 +53,7 @@ export default function Home() {
           </Link>
 
           <Link href="/logIn">
-            <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700">
+            <Button className="p-3 bg-white text-black hover:ease-out hover:bg-gray-700 hidden">
               Login
             </Button>
           </Link>
