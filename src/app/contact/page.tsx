@@ -6,9 +6,21 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { supabaseClient } from "@/db/client";
 import { useState } from "react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 export default function Page() {
   const [email, setEmail] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,11 +32,18 @@ export default function Page() {
 
       if (error) {
         console.error("Error inserting Data: ", error);
+        alert("Submission failed, please try again later!");
       } else {
         console.log("Data inserted: ", data);
+        setShowSuccess(true);
+        setTimeout(() => {
+          setShowSuccess(false);
+          setEmail(""); // Clear the email input field
+        }, 5000);
       }
     } else {
       console.error("Supabase client error at contact us route");
+      alert("Submission failed, please try again later!");
     }
   };
 
@@ -63,6 +82,12 @@ export default function Page() {
         </div>
       </div>
       {/* <BackgroundBeams /> */}
+      {showSuccess && (
+        <div className="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded shadow">
+          Thank you for submitting your contact details! You will receive a
+          response shortly.
+        </div>
+      )}
     </div>
   );
 }
