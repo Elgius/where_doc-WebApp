@@ -17,5 +17,11 @@ export async function GET() {
     return new Response(JSON.stringify({ results }), { status: 200 });
   } else {
     console.error("Client initialization error, API route shutting down");
+    return new Response(
+      JSON.stringify({ error: "error detected, contact support" }),
+      {
+        status: 500,
+      }
+    );
   }
 }
