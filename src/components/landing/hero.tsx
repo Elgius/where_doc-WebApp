@@ -18,12 +18,12 @@ const hero = () => {
             </p>
             <div className="flex mt-14 gap-5">
               <Button>Find a Doctor</Button>
-              <Button>Recommend me a doctor</Button>
+              <Button disabled>Recommend me a doctor</Button>
             </div>
           </div>
           <div className="relative lg:col-span-5 lg:-mr-8 xl:col-span-6 mt-10 rounded-md">
             <img
-              className="aspect-[3/2] bg-gray-50 object-cover lg:aspect-[4/3] lg:h-[700px] xl:aspect-[16/9]"
+              className="aspect-[3/2] bg-gray-50 object-cover lg:aspect-[4/3] lg:h-[700px] xl:aspect-[16/9] rounded"
               src={imageLink}
               alt="we dont own these links (dont sue me)"
             />
