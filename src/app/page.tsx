@@ -12,6 +12,8 @@ export default function Home() {
   );
 }
 
+// reference code below
+
 // export default function Home() {
 //   // Home page
 //   return (

@@ -1,19 +1,23 @@
 "use client";
 import React from "react";
+import { useState, useEffect } from "react";
 // import Listing from "@/components/listing/Table";
 import { DataTable } from "./data-table";
 import { columns } from "./columns";
 import { availableDoctors } from "@/lib/data";
 
 export default function Lists() {
-  const fetchData = async () => {
-    const response = await fetch("./api/data");
-    const data = await response.json();
+  const [listing, setListing] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      console.log("fetch exectuted");
+      const response = await fetch("./api/data");
+      const data = await response.json();
+      setListing(data);
+    };
+    fetchData();
+  }, []);
 
-    let doc = data;
-
-    console.log(doc);
-  };
   return (
     <div className="h-screen w-screen flex justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-y-auto overflow-x-hidden">
       <div className=" p-2 max-w-7xl  mx-auto relative z-10  w-full pt-12 md:pt-20">
@@ -28,7 +32,7 @@ export default function Lists() {
         </p>
 
         <div className="mt-12 flex items-center flex-col lg:flex-row md:flex-row justify-center gap-7 ">
-          <DataTable columns={columns} data={availableDoctors} />
+          <DataTable columns={columns} data={listing} />
         </div>
       </div>
     </div>
