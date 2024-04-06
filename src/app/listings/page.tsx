@@ -13,6 +13,7 @@ export default function Lists() {
       console.log("fetch exectuted");
       const response = await fetch("./api/data");
       const data = await response.json();
+      console.log(data);
       setListing(data);
     };
     fetchData();
