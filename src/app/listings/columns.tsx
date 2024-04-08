@@ -21,9 +21,9 @@ export const columns: ColumnDef<Doctor>[] = [
     filterFn: "fuzzy",
   },
   {
-    accessorKey: "field",
+    accessorKey: "department",
     cell: (info) => info.getValue(),
-    header: "Field",
+    header: "Department",
     filterFn: "fuzzy",
   },
   {

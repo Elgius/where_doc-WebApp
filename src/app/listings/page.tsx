@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // import Listing from "@/components/listing/Table";
 import { DataTable } from "./data-table";
 import { columns } from "./columns";
-import { availableDoctors } from "@/lib/data";
+// import { availableDoctors } from "@/lib/data";
 
 export default function Lists() {
   const [listing, setListing] = useState([]);
@@ -15,7 +15,7 @@ export default function Lists() {
       const response = await fetch("./api/data");
       const data = await response.json();
       console.log(`this is the data: ${JSON.stringify(data, null, 2)}`);
-      setListing(data);
+      setListing(data.results);
       setLoading(false);
     };
     fetchData();
