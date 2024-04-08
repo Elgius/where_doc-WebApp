@@ -8,16 +8,22 @@ import { availableDoctors } from "@/lib/data";
 
 export default function Lists() {
   const [listing, setListing] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       console.log("fetch exectuted");
       const response = await fetch("./api/data");
       const data = await response.json();
-      console.log(data);
+      console.log(`this is the data: ${JSON.stringify(data, null, 2)}`);
       setListing(data);
+      setLoading(false);
     };
     fetchData();
   }, []);
+
+  if (loading) {
+    return <div>loading....</div>;
+  }
 
   return (
     <div className="h-screen w-screen flex justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-y-auto overflow-x-hidden">
