@@ -1,6 +1,7 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
+import Link from "next/link";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -16,7 +17,11 @@ type Doctor = {
 export const columns: ColumnDef<Doctor>[] = [
   {
     accessorKey: "name",
-    cell: (info) => info.getValue(),
+    cell: (info) => (
+      <Link href={`/doctor/${info.row.original.name} as string`}>
+        {info.getValue() as string}
+      </Link>
+    ),
     header: "Name",
     filterFn: "fuzzy",
   },
