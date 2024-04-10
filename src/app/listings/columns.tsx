@@ -18,7 +18,7 @@ export const columns: ColumnDef<Doctor>[] = [
   {
     accessorKey: "name",
     cell: (info) => (
-      <Link href={`/doctor/${info.row.original.name} as string`}>
+      <Link href={`/doctors/${info.row.original.name}`}>
         {info.getValue() as string}
       </Link>
     ),

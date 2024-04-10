@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // import Listing from "@/components/listing/Table";
 import { DataTable } from "./data-table";
 import { columns } from "./columns";
-// import { availableDoctors } from "@/lib/data";
+import { availableDoctors } from "@/lib/data";
 
 export default function Lists() {
   const [listing, setListing] = useState([]);
@@ -39,7 +39,7 @@ export default function Lists() {
         </p>
 
         <div className="mt-12 flex items-center flex-col lg:flex-row md:flex-row justify-center gap-7 ">
-          <DataTable columns={columns} data={listing} />
+          <DataTable columns={columns} data={availableDoctors} />
         </div>
       </div>
     </div>
