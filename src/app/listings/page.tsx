@@ -6,6 +6,8 @@ import { DataTable } from "./data-table";
 import { columns } from "./columns";
 import { availableDoctors } from "@/lib/data";
 
+// fix the thing here
+
 export default function Lists() {
   const [listing, setListing] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -39,7 +41,7 @@ export default function Lists() {
         </p>
 
         <div className="mt-12 flex items-center flex-col lg:flex-row md:flex-row justify-center gap-7 ">
-          <DataTable columns={columns} data={availableDoctors} />
+          <DataTable columns={columns} data={listing} />
         </div>
       </div>
     </div>
