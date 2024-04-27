@@ -2,6 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
+import { convertNametoURLParam } from "@/lib/utils";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -18,7 +19,7 @@ export const columns: ColumnDef<Doctor>[] = [
   {
     accessorKey: "name",
     cell: (info) => (
-      <Link href={`/doctors/${info.row.original.name}`}>
+      <Link href={`/doctors/${convertNametoURLParam(info.row.original.name)}`}>
         {info.getValue() as string}
       </Link>
     ),
