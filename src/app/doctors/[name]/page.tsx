@@ -1,12 +1,12 @@
 "use client";
 
+import type { Doctor } from "@/lib/data";
 import { useState, useEffect } from "react";
 import { availableDoctors } from "@/lib/data";
-import type { Doctor } from "@/lib/data";
 import Link from "next/link";
 import Image from "next/image";
 import { convertNametoURLParam } from "@/lib/utils";
-import { BadgeCheck, Home, ChevronRight, Verified, Star } from "lucide-react";
+import { Home, ChevronRight, Verified, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
@@ -15,6 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import NotFound from "@/app/not-found";
 
 function Data({ params }: { params: { name: string } }) {
   const [doctor, setDoctor] = useState<Doctor>({
@@ -26,6 +27,7 @@ function Data({ params }: { params: { name: string } }) {
     //   room: ''
   });
   const [loading, setLoading] = useState(true);
+  const [notfound, setNotFound] = useState(false);
 
   const reviews = [
     {
@@ -39,7 +41,13 @@ function Data({ params }: { params: { name: string } }) {
       verified: true,
       stars: 3,
       review: "Really great and kind doctor."
-    }
+    },
+    {
+      patient: "Mariel",
+      verified: false,
+      stars: 5,
+      review: "Communicates very well with the patients. Really amazing!"
+    },
   ]
 
   useEffect(() => {
@@ -52,13 +60,18 @@ function Data({ params }: { params: { name: string } }) {
           return data;
         }
       })
+      setNotFound(true);
     }
 
     if (doctor.name === "") findDoc();
-  }, [doctor, params])
+
+  }, [doctor, notfound, params])
 
   if (loading) {
-    return <div>loading....</div>;
+    if (notfound) {
+      return <NotFound />
+    }
+    return <div>Loading....</div>;
   }
 
   return (
@@ -79,7 +92,6 @@ function Data({ params }: { params: { name: string } }) {
             <div className="p-4 py-14 bg-gray-500 rounded-xl">
               <Image alt="pp" src="/Caduceus.png" width={250} height={300} />
             </div>
-            {/* <div className="text-center mx-auto italic opacity-20">Picture</div> */}
           </div>
 
           {/* Left side below */}
@@ -98,6 +110,7 @@ function Data({ params }: { params: { name: string } }) {
 
             <div className="my-8 flex flex-col gap-2 max-w-2xl">
               <h2 className="font-bold text-2xl">Reviews from Patients:</h2>
+              
               {/* Carousel below */}
               <Carousel className="w-full">
                 <CarouselContent>
@@ -116,7 +129,7 @@ function Data({ params }: { params: { name: string } }) {
                             </div>
                             {
                               data.verified ? <div className="flex gap-1 text-sm items-center">Verified Patient <Verified size={15} /></div> 
-                              : <div>Unverified</div>
+                              : <div className="flex gap-1 text-sm items-center">Unverified Patient</div>
                             }
                             <p className="mt-4 italic">{data.review}</p>
                           </CardContent>
